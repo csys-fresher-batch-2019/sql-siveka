@@ -59,7 +59,7 @@ create sequence selection_process_seq start with 1001 increment by 1;
 
 insert into selection_process (selection_id,channel_id,user_id,price_with_tax)
 values (1001,(select channel_id from channel_list where channel_id=&channel_id),
-(select user_id from user_list where user_id=&user_id),(select price_with_tax from channel_list where channel_id=&channel_id));
+(select user_id from user_list where user_id=&user_id),(select price_with_tax from channel_list where channel_id=channel_id));
 
 select * from selection_process;
 
