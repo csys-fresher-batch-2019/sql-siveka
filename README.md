@@ -34,3 +34,18 @@ values (1504,'sun tv','tamil','pay',19.00,22.42);
 
 desc channel_list;
 select * from channel_list;
+
+#### Features 2:To list the user information.
+
+```sql
+create table user_list
+(
+user_id number,
+user_name varchar2(35) not null,
+email_id varchar2(35) not null,
+phone_number number (10) not null,
+user_created timestamp default systimestamp,
+constraint user_id_pk primary key (user_id),
+constraint user_info_uq unique (user_id,email_id,phone_number)
+);
+
