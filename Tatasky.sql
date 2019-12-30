@@ -69,5 +69,6 @@ select * from selection_process;
 drop SEQUENCE selection_process_seq;
 
 insert into selected_list (selection_id,user_id,total_amount,deactive_date)
-values (&selection_id,(select user_id from selection_process where selection_id=&selection_id),(select sum(price_with_tax)from
-selection_process where user_id=&user_id),(sysdate+3));
+values (&selection_id,(select user_id from user_list u join selection_process sp on sp.selection_id=u.user_id),
+       (select sum(price_with_tax) from selection_process
+selection_process where user_id=user_id),(sysdate+30));
