@@ -12,7 +12,7 @@
 create table channel_list
 (
 channel_name varchar2(40) not null,
-channel_id number(10) not null,
+channel_id number(10),
 language varchar2(25) not null,
 free/pay char(5) not null,
 price decimal(4,2) not null,
