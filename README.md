@@ -5,6 +5,8 @@
 ## Features
 
 * User should be able to view all the channel information.
+* Each user have a individual login and view all the channel information from their own login id.
+* Each user have a options for select the channels from their own user id.
 
 ### Features 1:To list the channel information.
 
@@ -49,3 +51,10 @@ constraint user_id_pk primary key (user_id),
 constraint user_info_uq unique (user_id,email_id,phone_number)
 );
 
+insert into user_list (user_id,user_name,email_id,phone_number) values (&user_id,'&user_name','&email_id',&phone_number);
+
+insert into user_list (user_id,user_name,email_id,phone_number) values (,'','',);
+
+desc user_list;
+select * from user_list;
+```
