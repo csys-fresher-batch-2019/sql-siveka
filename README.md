@@ -1,12 +1,12 @@
-#Tatasky Channel Selection App
+# Tatasky Channel Selection App
 
-*https://tatasky.in
+* https://tatasky.in
 
-##Features
+## Features
 
-*User should be able to view all the channel information.
+* User should be able to view all the channel information.
 
-###Features 1:To list the channel information.
+### Features 1:To list the channel information.
 
 ```sql
 create table channel_list
