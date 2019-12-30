@@ -41,8 +41,8 @@ select * from channel_list;
 create table user_list
 (
 user_id number,
-user_name varchar2(35) not null,
-email_id varchar2(35) not null,
+user_name varchar2(50) not null,
+email_id varchar2(60) not null,
 phone_number number (10) not null,
 user_created timestamp default systimestamp,
 constraint user_id_pk primary key (user_id),
