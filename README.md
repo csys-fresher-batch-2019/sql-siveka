@@ -34,7 +34,7 @@ values (1504,'sun tv','tamil','pay',19.00,22.42);
 
 desc channel_list;
 select * from channel_list;
-
+```
 ### Features 2:To list the user information.
 
 ```sql
