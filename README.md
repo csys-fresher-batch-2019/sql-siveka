@@ -26,5 +26,8 @@ values (&channel_id,'&channel_name','&language','&free_pay',&price,&price_with_t
 insert into channel_list (channel_id,channel_name,language,free/pay,price,price_with_tax)
 values (1518,'star vijay','tamil','pay',17.00,20.06);
 
+insert into channel_list (channel_id,channel_name,language,free/pay,price,price_with_tax)
+values (1504,'sun tv','tamil','pay',19.00,22.42);
+
 desc channel_list;
 select * from channel_list;
