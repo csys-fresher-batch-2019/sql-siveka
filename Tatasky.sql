@@ -29,7 +29,8 @@ channel_id number(10) not null,
 user_id number(5)not null,
 price_with_tax decimal(4,2) not null,
 payment_status char(25) default 'Inprogress',
-foreign key (channel_id) references channel_list (channel_id),
+constraint selection_id_pk primary key (selection_id),      
+constraint foreign key (channel_id) references channel_list (channel_id),
 foreign key (user_id) references user_list (user_id)
 );
 
