@@ -95,7 +95,6 @@ selection_id number(5),
 channel_id number(10) not null,
 user_id number(5)not null,
 price_with_tax decimal(4,2) not null,
-payment_status char(25) default 'Inprogress',
 constraint selection_id_pk primary key (selection_id),      
 constraint channe_id_fk foreign key (channel_id) references channel_list (channel_id),
 constraint user_id_fk foreign key (user_id) references user_list (user_id)
