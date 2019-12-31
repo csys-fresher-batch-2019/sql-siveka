@@ -27,15 +27,31 @@ constraint channel_name_uq unique (channel_name)
 
 insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
 values (&channel_id,'&channel_name','&language','&free_pay',&price,&price_with_tax);
-
+--or--
 insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
 values (1518,'star vijay','tamil','pay',17.00,20.06);
 
 insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
-values (1504,'sun tv','tamil','pay',19.00,22.42);
+values (1423,'star maa','telugu','pay',19.00,22.42);
+
+insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
+values (609,'india today','english','free',00.00,00.00);
+
+insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
+values (1104,'zee hindi','hindi','pay',1.00,1.18);
 
 desc channel_list;
 select * from channel_list;
+
+Table : chaneel_list
+
+| channel_name | channel_id | language | free_or_pay | price | price_with_tax |
+|--------------|------------|----------|-------------|-------|----------------|
+| star vijay   | 1518       | tamil    | pay         | 17.00 | 20.06          |
+| star maa     | 1423       | telugu   | pay         | 19.00 | 22.42          |
+| india today  | 609        | english  | free        | 00.00 | 00.00          |
+| zee hindi    | 1104       | hindi    | pay         | 1.00  | 1.18           |
+
 ```
 ### Features 2: Users creation and to list the user information.
 
@@ -46,7 +62,6 @@ user_id number,
 user_name varchar2(50) not null,
 email_id varchar2(60) not null,
 phone_number number (10) not null,
-user_created timestamp default systimestamp,
 constraint user_id_pk primary key (user_id),
 constraint user_info_uq unique (user_id,email_id,phone_number)
 );
@@ -57,4 +72,13 @@ insert into user_list (user_id,user_name,email_id,phone_number) values (101,'sur
 
 desc user_list;
 select * from user_list;
+
+### Table : user_list
+
+| user_id | user_name |     email_id     | phone_number |
+|:-------:|:---------:|:----------------:|:------------:|
+|   101   |   suresh  | suresh@gmail.com |  9887766543  |
+|   102   |    john   |  john@gmail.com  |  9876434523  |
+|   103   |    jeni   |  jeni@gmail.com  |  9976542354  |
 ```
+
