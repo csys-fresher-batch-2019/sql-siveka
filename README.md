@@ -43,7 +43,7 @@ values (1104,'zee hindi','hindi','pay',1.00,1.18);
 desc channel_list;
 select * from channel_list;
 
-Table : chaneel_list
+### Table : chaneel_list
 
 | channel_name | channel_id | language | free_or_pay | price | price_with_tax |
 |--------------|------------|----------|-------------|-------|----------------|
@@ -67,8 +67,12 @@ constraint user_info_uq unique (user_id,email_id,phone_number)
 );
 
 insert into user_list (user_id,user_name,email_id,phone_number) values (&user_id,'&user_name','&email_id',&phone_number);
+--or--
+insert into user_list (user_id,user_name,email_id,phone_number) values (101,'suresh','suresh@gmail.com',9887766543);
 
-insert into user_list (user_id,user_name,email_id,phone_number) values (101,'suresh','suresh@gmail.com',9887766554);
+insert into user_list (user_id,user_name,email_id,phone_number) values (102,'john','john@gmail.com',9876434523);
+
+insert into user_list (user_id,user_name,email_id,phone_number) values (103,'jeni','jeni@gmail.com',9976542354);
 
 desc user_list;
 select * from user_list;
