@@ -105,3 +105,29 @@ create sequence selection_process_seq start with 1 increment by 1;
 insert into selection_process (selection_id,user_id,channel_id,price_with_tax)
 values (selection_process_seq.nextval,&user_id,&channel_id,
 (select price_with_tax from channel_list where channel_id=&channel_id));
+
+--or--
+insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
+values (selection_process_seq.nextval,101,1518,20.06);
+
+insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
+values (selection_process_seq.nextval,101,1423,22.42);
+
+insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
+values (selection_process_seq.nextval,102,609,00.00);
+
+insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
+values (selection_process_seq.nextval,103,609,00.00);
+
+insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
+values (selection_process_seq.nextval,103,1518,20.06);
+
+### table : selection_process
+
+| selection_id | user_id | channel_id | price_with_tax |
+|--------------|---------|------------|----------------|
+| 1            | 101     | 1518       | 20.06          |
+| 2            | 101     | 1423       | 22.42          |
+| 3            | 102     | 609        | 00.00          |
+| 4            | 103     | 609        | 00.00          |
+| 5            | 103     | 1518       | 20.06          |
