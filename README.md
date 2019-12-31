@@ -100,4 +100,8 @@ constraint channe_id_fk foreign key (channel_id) references channel_list (channe
 constraint user_id_fk foreign key (user_id) references user_list (user_id)
 );
 
+create sequence selection_process_seq start with 1 increment by 1;
 
+insert into selection_process (selection_id,user_id,channel_id,price_with_tax)
+values (selection_process_seq.nextval,&user_id,&channel_id,
+(select price_with_tax from channel_list where channel_id=&channel_id));
