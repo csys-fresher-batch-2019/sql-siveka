@@ -25,19 +25,19 @@ constraint free_pay_ck check (free_or_pay in ('free','pay')),
 constraint channel_name_uq unique (channel_name)                                          
 );
 
-insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
+insert into channel_list (channel_id,channel_name,language,free_or_pay,price,price_with_tax)
 values (&channel_id,'&channel_name','&language','&free_pay',&price,&price_with_tax);
 --or--
-insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
+insert into channel_list (channel_id,channel_name,language,free_or_pay,price,price_with_tax)
 values (1518,'star vijay','tamil','pay',17.00,20.06);
 
-insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
+insert into channel_list (channel_id,channel_name,language,free_or_pay,price,price_with_tax)
 values (1423,'star maa','telugu','pay',19.00,22.42);
 
-insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
+insert into channel_list (channel_id,channel_name,language,free_or_pay,price,price_with_tax)
 values (609,'india today','english','free',00.00,00.00);
 
-insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
+insert into channel_list (channel_id,channel_name,language,free_or_pay,price,price_with_tax)
 values (1104,'zee hindi','hindi','pay',1.00,1.18);
 
 desc channel_list;
