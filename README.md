@@ -37,7 +37,7 @@ values (1504,'sun tv','tamil','pay',19.00,22.42);
 desc channel_list;
 select * from channel_list;
 ```
-### Features 2:To list the user information.
+### Features 2: Users creation and to list the user information.
 
 ```sql
 create table user_list
@@ -53,7 +53,7 @@ constraint user_info_uq unique (user_id,email_id,phone_number)
 
 insert into user_list (user_id,user_name,email_id,phone_number) values (&user_id,'&user_name','&email_id',&phone_number);
 
-insert into user_list (user_id,user_name,email_id,phone_number) values (,'','',);
+insert into user_list (user_id,user_name,email_id,phone_number) values (101,'suresh','suresh@gmail.com',9887766554);
 
 desc user_list;
 select * from user_list;
