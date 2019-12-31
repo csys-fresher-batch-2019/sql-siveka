@@ -85,4 +85,6 @@ select * from user_list;
 |   102   |    john   |  john@gmail.com  |  9876434523  |
 |   103   |    jeni   |  jeni@gmail.com  |  9976542354  |
 ```
+### Features 3: To list to selected channels with selection id. (payment is not done)
+
 
