@@ -30,8 +30,8 @@ user_id number(5)not null,
 price_with_tax decimal(4,2) not null,
 payment_status char(25) default 'Inprogress',
 constraint selection_id_pk primary key (selection_id),      
-constraint foreign key (channel_id) references channel_list (channel_id),
-foreign key (user_id) references user_list (user_id)
+constraint channe_id_fk foreign key (channel_id) references channel_list (channel_id),
+constraint user_id_fk foreign key (user_id) references user_list (user_id)
 );
 
 create table selected_list  
@@ -74,3 +74,5 @@ drop SEQUENCE selection_process_seq;
 insert into selected_list (selection_id,user_id,total_amount,deactive_date)
 values (&selection_id,(select user_id from user_list u join selection_process sp on sp.selection_id=u.user_id),
        (select sum(price_with_tax) from selection_process sp join user_id on u.user_id=sp.selection_id),(sysdate+30));
+                                                                                                   
+                                                                                                         
