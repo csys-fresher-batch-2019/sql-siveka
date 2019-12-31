@@ -16,13 +16,13 @@ create table channel_list
 channel_name varchar2(40) not null,
 channel_id number(10),
 language varchar2(25) not null,
-free_pay char(5) not null,
+free_or_pay char(5) not null,
 price decimal(4,2) not null,
 price_with_tax decimal (4,2) not null,
 constraint channel_id_pk primary key (channel_id),
 constraint language_ck check (language in ('tamil','telugu','english','hindi')),
-constraint free_pay_ck check (free_pay in ('free','pay')),
-constraint channel_name_uq unique (channe_name)                                          
+constraint free_pay_ck check (free_or_pay in ('free','pay')),
+constraint channel_name_uq unique (channel_name)                                          
 );
 
 insert into channel_list (channel_id,channel_name,language,free_pay,price,price_with_tax)
