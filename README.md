@@ -53,7 +53,7 @@ select * from channel_list;
 | zee hindi    | 1104       | hindi    | pay         | 1.00  | 1.18           |
 
 ```
-### Features 2: Users creation and to list the user information.
+### Features 2: Users creation and to list the users information.
 
 ```sql
 create table user_list
