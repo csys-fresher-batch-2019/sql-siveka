@@ -5,8 +5,8 @@
 ## Features
 
 * User should be able to view all the channel information.
-* Each user have a individual login and view all the channel information from their own login id.
-* Each user have a options for select the channels from their own user id.
+* Each user have an individual login and view all the channel information from their own login id.
+* Each user have an option for selecting the channels from their own user id.
 
 ### Features 1: To list the channel information.
 
