@@ -92,8 +92,8 @@ select * from user_list;
 create table user_subscribed_list
 (
 selection_id number(5),
-channel_id number(10) not null,
 user_id number(5)not null,
+channel_id number(10) not null,
 price_amount decimal(4,2) not null,
 active_date date default sysdate,
 deactive_date date,
