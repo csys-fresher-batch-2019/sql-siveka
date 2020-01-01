@@ -85,19 +85,24 @@ select * from user_list;
 |   102   |    john   |  john@gmail.com  |  9876434523  |
 |   103   |    jeni   |  jeni@gmail.com  |  9976542354  |
 ```
-### Features 3: To list to selected channels with selection id. (payment is not done)
+### Features 3: To list to selected channels with selection id.
 
 ```sql
 
-create table selection_process
+create table user_subscribed_list
 (
 selection_id number(5),
 channel_id number(10) not null,
 user_id number(5)not null,
-price_with_tax decimal(4,2) not null,
-constraint selection_id_pk primary key (selection_id),      
-constraint channe_id_fk foreign key (channel_id) references channel_list (channel_id),
-constraint user_id_fk foreign key (user_id) references user_list (user_id)
+price_amount decimal(4,2) not null,
+active_date date default sysdate,
+deactive_date date,
+payment_status char(15) default 'Completed',
+comments varchar2 (100),     
+constraint selection1_id_pk primary key (selection_id),      
+constraint channel1_id_fk foreign key (channel_id) references channel_list(channel_id),
+constraint user1_id_fk foreign key (user_id) references user_list (user_id),
+constraint payment1_status_ck check (payment_status in ('Completed'))
 );
 
 create sequence selection_process_seq start with 1 increment by 1;
