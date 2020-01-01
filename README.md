@@ -106,27 +106,30 @@ constraint payment1_status_ck check (payment_status in ('Completed'))
 
 create sequence selection_process_seq start with 1 increment by 1;
 
-insert into selection_process (selection_id,user_id,channel_id,price_with_tax)
+insert into user_subscribed_list (selection_id,user_id,channel_id,price_amount,deactive_date)
 values (selection_process_seq.nextval,&user_id,&channel_id,
-(select price_with_tax from channel_list where channel_id=&channel_id));
+(select price_with_tax from channel_list where channel_id=&channel_id),(sysdate+29));
 
 --or--
-insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
-values (selection_process_seq.nextval,101,1518,20.06);
 
-insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
-values (selection_process_seq.nextval,101,1423,22.42);
+insert into user_subscribed_list (selection_id,user_id,channel_id,price_amount,deactive_date) 
+values (selection_process_seq.nextval,101,1518,20.06,(sysdate+29));
 
-insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
-values (selection_process_seq.nextval,102,609,00.00);
+insert into user_subscribed_list (selection_id,user_id,channel_id,price_amount,deactive_date) 
+values (selection_process_seq.nextval,101,1423,22.42,(sysdate+29));
 
-insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
-values (selection_process_seq.nextval,103,609,00.00);
+insert into user_subscribed_list (selection_id,user_id,channel_id,price_amount,deactive_date) 
+values (selection_process_seq.nextval,102,609,00.00,(sysdate+29));
 
-insert into selection_process (selection_id,user_id,channel_id,price_with_tax) 
-values (selection_process_seq.nextval,103,1518,20.06);
+insert into user_subscribed_list (selection_id,user_id,channel_id,price_amount,deactive_date) 
+values (selection_process_seq.nextval,103,609,00.00,(sysdate+29));
 
-### table : selection_process
+insert into user_subscribed_list (selection_id,user_id,channel_id,price_amount,deactive_date) 
+values (selection_process_seq.nextval,103,1518,20.06,(sysdate+29));
+
+select * from user_subscribed_list;
+
+### table : user_subscribed_list
 
 | selection_id | user_id | channel_id | price_with_tax |
 |--------------|---------|------------|----------------|
