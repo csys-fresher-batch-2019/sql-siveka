@@ -1,13 +1,13 @@
 --1. filter option for channel selection. (user) 
 
 --# minimum price:
-
+```sql
 select price_with_tax,channel_name,channel_id,language from channel_list order by price_with_tax;
-
+```
 --# maximum price:
-
+```sql
 select price_with_tax,channel_name,channel_id,language from channel_list order by price_with_tax desc;
-
+```
 --# free channels only:
 
 select channel_id,channel_name,price_with_tax from channel_list where price_with_tax=00.00;
