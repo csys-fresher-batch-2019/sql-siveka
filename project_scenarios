@@ -1,0 +1,49 @@
+--1. filter option for channel selection. (user) 
+
+--# minimum price:
+
+select price_with_tax,channel_name,channel_id,language from channel_list order by price_with_tax;
+
+--# maximum price:
+
+select price_with_tax,channel_name,channel_id,language from channel_list order by price_with_tax desc;
+
+--# free channels only:
+
+select channel_id,channel_name,price_with_tax from channel_list where price_with_tax=00.00;
+
+--# total number of user available.(admin)
+
+select count(*) user_id from user_list; 
+select count(*) channel_id from channel_list;
+select count(*) channel_id from user_subscribed_list;
+select sum(price_amount) total_amount from user_subscribed_list;
+
+--2. To find out the total number of channels selected and total amount by the user.
+
+select count(channel_id) total_number_of_channels,sum(price_amount) total_amount from user_subscribed_list
+        where user_id = 101;
+
+--3.To find out the total price amount for selected channels to the given user.
+
+select fu_total_channel () from dual;
+
+select fu_total_amount () from dual;
+
+select fu_total_channel (),fu_total_amount () from dual;
+
+--4. To find out the what are channels are selected to the given user.
+
+select user_id,channel_name from user_subscribed_list where user_id=101;
+
+--5. To find out the remaining day to be active.
+
+select fu_active_status (101,1518) from dual;
+
+--6. To find out total amount, noumber of channels and active status.
+
+select fu_total_channel (),fu_total_amount (),fu_active_status (101,1518) from dual;
+
+--7. To find out the upcoming deactive channels.
+
+select user_id,channel_id,channel_name,deactive_date from user_subscribed_list order by deactive_date;
