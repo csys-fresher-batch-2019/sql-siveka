@@ -190,7 +190,7 @@ select fu_total_channel (),fu_total_amount (),fu_active_status (101,1518) from d
 --7. To find out the upcoming deactive channels.
 
 select user_id,channel_id,channel_name,deactive_date from user_subscribed_list order by deactive_date;
-
+```
 ### featuers 4: To list the channels categories wise.
 ```sql
 create table channel_categories_list
