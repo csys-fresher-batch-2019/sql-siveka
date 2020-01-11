@@ -217,11 +217,12 @@ select * from channel_categories_list;
 ```sql
 create table special_packs
 (
-pack_id varchar2(10) not null,
+pack_id varchar2(10),
 pack_name varchar2(100) not null,
 number_of_channels number (10) not null,
 price decimal (10,2) not null,
-constraint pack_id_pk primary key (pack_id)
+constraint pack_id_pk primary key (pack_id),
+constraint pack_name_uq unique (pack_name)
 );
 
 insert into special_packs (pack_id,pack_name,number_of_channels,price)
