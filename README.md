@@ -212,7 +212,7 @@ values (&channel_id,'&channel_name','&category_type','&language',&price_amount);
 desc channel_categories_list;
 select * from channel_categories_list;
 ```
-### featuers 5: To list the spcial packs for channels.
+### featuers 5: To list the special packs for channels.
 
 ```sql
 create table special_packs
@@ -226,7 +226,7 @@ constraint pack_name_uq unique (pack_name)
 );
 
 insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p1','south spcial pack',21,207.68);
+values ('p2p3','south special pack',21,207.68);
 
 insert into special_packs (pack_id,pack_name,number_of_channels,price)
 values ('p2','tamil basic',11,112.10);
@@ -240,8 +240,6 @@ values ('p4','hindi basic',7,57.06);
 insert into special_packs (pack_id,pack_name,number_of_channels,price)
 values ('p5','tamil smart pack',7,44.84);
 
-insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p6','family pack',40,355.60);
 
 desc special_packs;
 
