@@ -205,7 +205,7 @@ constraint channel2_id_pk primary key (channel_id),
 constraint channel2_name_uq unique (channel_name),
 constraint language2_ck check (language in ('tamil','telugu','english','hindi'))
 constraint category_id_fk foreign key (category_id) references categories_list (category_id),
-constraint category_id_fk foreign key (special_pack_id) references special_packs (sepcial_pack_id)
+constraint special_pack_fk foreign key (special_pack_id) references special_packs (sepcial_pack_id)
 );
 
 insert into channel_categories_list (channel_id,channel_name,category_type,language,price_amount)
