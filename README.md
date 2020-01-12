@@ -136,7 +136,7 @@ select * from categories_lsit;
 |     7en     |     music     |  english |          2         |  4.72 |
 
 ````
-### Features 4: To list to special packs for the channel selection.
+### Features 4: To list special packs for the channel selection.
 ```sql
 create table special_packs
 (
@@ -213,7 +213,7 @@ select * from channel_categories_list;
 |     670    |     pogo     |   hindi  |     5.02     |     6hi     |        p4       |
 |     690    |   chutti tv  |   tamil  |     7.08     |     6ta     |        p2       |
 ```
-### featuers 6: To list the user and selected channel items.
+### featuers 6: To list the users selected channel items.
 ```sql
 create table user_subscribed_list
 (
@@ -307,60 +307,6 @@ select fu_total_channel (),fu_total_amount (),fu_active_status (101,1518) from d
 
 select user_id,channel_id,channel_name,deactive_date from user_subscribed_list order by deactive_date;
 ```
-### featuers 4: To list the channels with categories wise.
-```sql
-create table channel_categories_list
-(
-channel_id number (10) not null,
-channel_name varchar2(100) not null,
-language varchar2(25) not null,
-price_amount decimal(6,2) not null,
-category_id varchar2(10) not null,
-special_pack_id varchar2(10) not null,
-constraint channel2_id_pk primary key (channel_id),
-constraint channel2_name_uq unique (channel_name),
-constraint language2_ck check (language in ('tamil','telugu','english','hindi'))
-constraint category_id_fk foreign key (category_id) references categories_list (category_id),
-constraint special_pack_fk foreign key (special_pack_id) references special_packs (sepcial_pack_id)
-);
-
-insert into channel_categories_list (channel_id,channel_name,category_type,language,price_amount)
-values (&channel_id,'&channel_name','&category_type','&language',&price_amount);
-
-desc channel_categories_list;
-select * from channel_categories_list;
-```
-### featuers 5: To list the special packs for channels.
-
-```sql
-create table special_packs
-(
-pack_id varchar2(10),
-pack_name varchar2(100) not null,
-number_of_channels number (10) not null,
-price decimal (10,2) not null,
-constraint pack_id_pk primary key (pack_id),
-constraint pack_name_uq unique (pack_name)
-);
-
-insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p2p3','south special pack',21,207.68);
-
-insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p2','tamil basic',11,112.10);
-
-insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p3','telugu basic',10,95.58);
-
-insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p4','hindi basic',7,57.06);
-
-insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p5','tamil smart pack',7,44.84);
 
 
-desc special_packs;
-
-select * from special_packs;
-```
 
