@@ -43,8 +43,6 @@ values (1104,'zee hindi','hindi','pay',1.00,1.18);
 desc channel_list;
 select * from channel_list;
 
-### Table : chaneel_list
-
 | channel_name | channel_id | language | free_or_pay | price | price_with_tax |
 |--------------|------------|----------|-------------|-------|----------------|
 | star vijay   | 1518       | tamil    | pay         | 17.00 | 20.06          |
