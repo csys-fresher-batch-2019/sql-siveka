@@ -149,9 +149,6 @@ constraint pack_name_uq unique (pack_name)
 );
 
 insert into special_packs (pack_id,pack_name,number_of_channels,price)
-values ('p2p3','south special pack',21,207.68);
-
-insert into special_packs (pack_id,pack_name,number_of_channels,price)
 values ('p2','tamil basic',11,112.10);
 
 insert into special_packs (pack_id,pack_name,number_of_channels,price)
@@ -170,7 +167,6 @@ select * from special_packs;
 
 | pack_id |      pack_name     | number_of_channels |  price |
 |:-------:|:------------------:|:------------------:|:------:|
-|   p2p3  | south special pack |         21         | 207.68 |
 |    p2   |     tamil basic    |         11         | 112.10 |
 |    p3   |    telugu basic    |         10         |  95.58 |
 |    p4   |     hindi basic    |          7         |  57.06 |
